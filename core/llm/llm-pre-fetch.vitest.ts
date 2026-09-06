@@ -63,11 +63,12 @@ describe("LLM Pre-fetch", () => {
       fake: "headers",
     });
     // Mock fetchwithRequestOptions to return a valid Response
+    // Note: packages/fetch uses node-fetch, not Web Response, so we cast to any
     vi.mocked(fetchwithRequestOptions).mockResolvedValue(
       new Response(JSON.stringify({ choices: [] }), {
         status: 200,
         headers: { "Content-Type": "application/json" },
-      }),
+      }) as any,
     );
   });
 
