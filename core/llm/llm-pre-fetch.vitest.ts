@@ -62,8 +62,13 @@ describe("LLM Pre-fetch", () => {
     vi.mocked(openAiAdapters.getAnthropicHeaders).mockReturnValue({
       fake: "headers",
     });
-    // Log to verify the mock is properly set up
-    console.log("Mock setup:", openAiAdapters);
+    // Mock fetchwithRequestOptions to return a valid Response
+    vi.mocked(fetchwithRequestOptions).mockResolvedValue(
+      new Response(JSON.stringify({ choices: [] }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }),
+    );
   });
 
   test("Invalid tool call args are ignored", async () => {
