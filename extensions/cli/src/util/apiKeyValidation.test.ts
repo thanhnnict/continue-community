@@ -5,11 +5,12 @@ import {
 
 describe("isValidAnthropicApiKey", () => {
   it("should return true for valid API keys", () => {
-    expect(isValidAnthropicApiKey("sk-ant-1234567890")).toBe(true);
-    expect(isValidAnthropicApiKey("sk-ant-abcdefghijklmnop")).toBe(true);
+    // Test keys are clearly fake - they follow the format but are not real
+    expect(isValidAnthropicApiKey("sk-ant-fake-key-for-testing-123")).toBe(true);
+    expect(isValidAnthropicApiKey("sk-ant-fakekeyabcdefghijklmnop")).toBe(true);
     expect(isValidAnthropicApiKey("sk-ant-test-key-with-dashes")).toBe(true);
     expect(
-      isValidAnthropicApiKey("sk-ant-api03_T3BlbkFJ1234567890abcdef"),
+      isValidAnthropicApiKey("sk-ant-fake-api03_T3BlbkFJ1234567890abcdef"),
     ).toBe(true);
   });
 
