@@ -40,4 +40,9 @@ export default {
   setupFilesAfterEnv: ["<rootDir>/test/jest.setup-after-env.js"],
   maxWorkers: 1, // equivalent to CLI --runInBand
   testMatch: ["**/*.test.ts"],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    // Skip integration tests that require API keys (upstream has secrets, community repo doesn't)
+    "llm/llm.test.ts",
+  ],
 };
