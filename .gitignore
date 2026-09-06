@@ -179,3 +179,14 @@ keys
 .copy-status
 .copy-log
 
+
+# Large binary assets - not for git
+docs/images/
+extensions/vscode/models/
+
+# Build artifacts
+extensions/vscode/dist/
+extensions/vscode/out/
+core/dist/
+gui/dist/
+packages/*/dist/
