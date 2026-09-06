@@ -42,7 +42,7 @@ export class GUIActions {
     for (let i = 0; i < iframes.length; i++) {
       const iframe = iframes[i];
       const src = await iframe.getAttribute("src");
-      if (src.includes("extensionId=Continue.continue")) {
+      if (src.includes("extensionId=thanhnnict.continue-comunity-goku")) {
         continueIFrame = iframe;
         break;
       }
@@ -114,10 +114,15 @@ export class GUIActions {
     message: string;
     inputFieldIndex: number;
   }) {
-    const editor = await GUISelectors.getMessageInputFieldAtIndex(
-      view,
-      inputFieldIndex,
-    );
+    // Wait for the input field to be available (GUI may take time to render)
+    const editor = await TestUtils.waitForSuccess(async () => {
+      const fields = await GUISelectors.getMessageInputFields(view);
+      if (fields.length <= inputFieldIndex) {
+        throw new Error(`Input field at index ${inputFieldIndex} not found`);
+      }
+      return fields[inputFieldIndex];
+    }, DEFAULT_TIMEOUT.XL);
+
     await editor.sendKeys(message);
     await editor.sendKeys(Key.ENTER);
   }

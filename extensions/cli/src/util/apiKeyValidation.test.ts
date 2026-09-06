@@ -6,7 +6,9 @@ import {
 describe("isValidAnthropicApiKey", () => {
   it("should return true for valid API keys", () => {
     // Test keys are clearly fake - they follow the format but are not real
-    expect(isValidAnthropicApiKey("sk-ant-fake-key-for-testing-123")).toBe(true);
+    expect(isValidAnthropicApiKey("sk-ant-fake-key-for-testing-123")).toBe(
+      true,
+    );
     expect(isValidAnthropicApiKey("sk-ant-fakekeyabcdefghijklmnop")).toBe(true);
     expect(isValidAnthropicApiKey("sk-ant-test-key-with-dashes")).toBe(true);
     expect(

@@ -182,7 +182,7 @@ keys
 
 # Large binary assets - not for git
 docs/images/
-extensions/vscode/models/
+!extensions/vscode/models/
 
 # Build artifacts
 extensions/vscode/dist/

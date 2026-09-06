@@ -44,6 +44,16 @@ This included removing anonymous telemetry, pulling out authentication, squashin
 
 [![GitHub Releases](https://img.shields.io/badge/GitHub_Releases-181717?logo=github&logoColor=white)](https://github.com/continuedev/continue/releases) [![View source](https://img.shields.io/badge/View_source-181717?logo=github&logoColor=white)](extensions/intellij)
 
+## Maintainer
+
+<a href="https://github.com/thanhnnict">
+  <img src="https://github.com/thanhnnict.png?size=100" alt="thanhnnict avatar" width="100" height="100" />
+  <br />
+  <strong>thanhnnict</strong>
+</a>
+
+Community fork maintaining and extending Continue after upstream went read-only.
+
 ## Contributors
 
 Thank you to the entire Continue community for helping us create a pioneering coding agent.
